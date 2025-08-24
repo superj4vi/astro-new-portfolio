@@ -1,0 +1,45 @@
+---
+import contacto from "../data/contacto.json";
+import LinkedInIcon from "../Icons/linkedin.astro";
+import X from "../Icons/x.astro";
+import Instragram from "../Icons/instagram.astro";
+import GitHub from "../Icons/github.astro";
+---
+
+<section
+  id="contacto"
+  class="section box-shadow"
+>
+  <h3>☎️Contacto</h3>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:32px;">
+    {
+      contacto.map((item) => (
+        <div style="background:#1a1a2e;padding:24px 32px;border-radius:14px;min-width:200px;box-shadow:0 2px 8px rgba(31,38,135,0.12);display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <span style="font-size:2rem;color:#e94560;">
+            {item.icon === "email" && "✉️"}
+            {item.icon === "location" && "📍"}
+            {item.icon === "social" && "🔗"}
+          </span>
+          <span style="font-weight:700;color:#f7b267;">{item.title}</span>
+          {/* <span style="color:#b2becd;">{item.value}</span> */}
+					<a href="mailto:aragonjavier017@gmail.com" style="color:white; text-decoration:none">{item.value}</a>
+
+          <div style="display:flex;gap:8px;margin-top:5px;">
+            <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/javier-aragon/">
+              {item.icon === "social" && <LinkedInIcon />}
+            </a>
+            <a target="_blank" rel="noopener" href="https://x.com/SuperJ4vi">
+              {item.icon === "social" && <X/>}
+            </a>
+            <a target="_blank" rel="noopener" href="https://x.com/SuperJ4vi">
+              {item.icon === "social" && <Instragram/>}
+            </a>
+            <a target="_blank" rel="noopener" href="https://github.com/superj4vi">
+              {item.icon === "social" && <GitHub/>}
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

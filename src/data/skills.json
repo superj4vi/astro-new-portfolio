@@ -1,0 +1,39 @@
+[
+	{
+		"titulo": "💻 Lenguajes de programación",
+		"contenido": [
+			"JavaScript",
+			"Python",
+			"Java",
+			"C#"
+		]
+	},
+	{
+		"titulo": "🎨 Frameworks y bibliotecas",
+		"contenido": [
+			"React",
+			"Node.js",
+			"Express",
+			"Astro",
+			"Vite",
+			"Bootstrap",
+			"Tailwind CSS",
+			"HTML",
+			"CSS"
+		]
+	},
+	{
+		"titulo": " 🗄️Bases de datos",
+		"contenido": [
+			"MySQL",
+			"SQL Server"
+		]
+	},
+	{
+		"titulo": "🧰 Herramientas y tecnologías",
+		"contenido": [
+			"Git",
+			"Visual Studio Code"
+		]
+	}
+]

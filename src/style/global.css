@@ -1,0 +1,18 @@
+h3{
+font-size:2rem;
+color:#e94560;
+margin-bottom:12px;
+}
+.box-shadow{
+  max-width: 900px;
+    margin: 32px auto;
+    background: #222831;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(187, 208, 231, 0.18);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+
+}

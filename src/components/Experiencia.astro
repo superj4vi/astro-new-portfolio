@@ -1,0 +1,56 @@
+---
+// Experiencia profesional
+import experiencia from "../data/experiencia.json";
+---
+
+<section id="experiencia" class="section">
+  <h3> 💼Experiencia Profesional</h3>
+  <div>
+    {
+      experiencia.map((item) => (
+        <div class="exp-item">
+          <span class="exp-title">{item.cargo}</span>
+          <span class="exp-company">{item.empresa} </span>
+          <span class="exp-date">{item.fechaInicio} - </span>
+          <span class="exp-date">{item.fechaFin}</span>
+          <div>{item.descripcion}</div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .section {
+    max-width: 900px;
+    margin: 32px auto;
+    background: #222831;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(187, 208, 231, 0.18);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+/*   .title-experience {
+    font-size: 1.5rem;
+    color: #e94560;
+    margin-bottom: 12px;
+  } */
+  .exp-item {
+    margin-bottom: 18px;
+  }
+  .exp-title {
+    font-weight: 700;
+    color: #f7b267;
+  }
+  .exp-company {
+    color: #b2becd;
+    font-size: 1.05rem;
+  }
+  .exp-date {
+    color: #b2becd;
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+</style>

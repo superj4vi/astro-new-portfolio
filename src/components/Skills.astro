@@ -1,0 +1,69 @@
+---
+// Skills
+import skills  from '../data/skills.json';
+
+---
+<script type="module" client:load>
+  import '/src/scripts/aos-init.js';
+</script>
+
+<section
+  id="skills"
+  class="section box-shadow"
+	data-aos="fade-up"
+	data-aos-duration="3000"
+	data-aos="fade-down"
+	>
+  <h3>⚒️Skills</h3>
+  <div class="skills">
+		{
+		skills.map((skill) => (
+			<div class="skill--content ">
+				<h1>{skill.titulo}</h1>
+				<div class="skill--content-item"
+				 >
+				{skill.contenido.map((item)=>(
+					<div class="skill--item"
+					data-aos="zoom-in"
+					>
+						{item}
+					</div>
+				))}
+				</div>
+		</div>
+		))}
+  </div>
+</section>
+<style>
+	.skills{
+		display:flex;
+		flex-direction:column;
+		flex-wrap:wrap;
+		gap:12px;
+	}
+	.skill--content{
+		color:#fff;
+		padding: 0 1.7rem 2.5rem;
+
+		border-radius:12px;
+		font-size:1rem;
+		font-weight:600;
+		background:#1a1a2e;
+		box-shadow:0 2px 8px rgba(31,38,135,0.18);
+		transition:background 0.2s;
+	}
+	.skill--content-item{
+		display:flex;
+		flex-direction:row;
+	}
+	.skill--item{
+		background:#e94560;
+		color:#fff;
+		padding:6px 16px;
+		border-radius:12px;
+		font-size:1rem;
+		font-weight:600;
+		transition:background 0.2s;
+		margin-right:5px;
+	}
+</style>
