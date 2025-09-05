@@ -9,8 +9,11 @@ const { title = "Javier Aragón | Desarrollador Web" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="./assets/logo.png" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
-		<!-- <link rel="stylesheet" href="../style/global.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <!-- <link rel="stylesheet" href="../style/global.css" /> -->
     <style>
       body {
         margin: 0;
@@ -30,5 +33,8 @@ const { title = "Javier Aragón | Desarrollador Web" } = Astro.props;
       <slot />
     </main>
     <slot name="footer" />
+
+    <script defer src="/scripts/menu-hamburger.js"></script>
+  
   </body>
 </html>
