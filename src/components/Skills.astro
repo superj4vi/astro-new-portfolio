@@ -4,7 +4,7 @@ import skills from "../data/skills.json";
 ---
 
 <script type="module">
-  import "/src/scripts/aos-init.js";
+  import "/public/scripts/aos-init.js";
 </script>
 
 <section
@@ -35,7 +35,7 @@ import skills from "../data/skills.json";
 <style>
   @media screen (width: 600px) {
     .section {
-			display: flex;
+      display: flex;
       flex-direction: column;
     }
   }
@@ -60,16 +60,16 @@ import skills from "../data/skills.json";
     display: flex;
     flex-direction: row;
   }
-	@media screen and (max-width: 1024px) {
-		.skill--content-item {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-			gap: 8px;
-		}
-		.skill--item {
-			text-align: center;
-		}
-	}
+  @media screen and (max-width: 1024px) {
+    .skill--content-item {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 8px;
+    }
+    .skill--item {
+      text-align: center;
+    }
+  }
   .skill--item {
     background: #e94560;
     color: #fff;
