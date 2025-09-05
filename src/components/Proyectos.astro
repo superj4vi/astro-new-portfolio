@@ -1,137 +1,56 @@
 ---
-// Proyectos con modales
+import Github from "../Icons/github.astro";
 ---
 
-<section
-  id="proyectos"
-  class="section box-shadow"
->
+<section id="proyectos" class="section box-shadow">
   <h3>🚀Proyectos Destacados</h3>
   <div style="display:flex;flex-wrap:wrap;gap:24px;">
-    <div
-      class="project-card card"
-      data-modal="portfolio"
-    >
+    <div class="project-card card">
       <strong style="color:#e94560;font-size:1.2rem;"
-        >Portafolio Personal</strong
+        >Calculadora de tiempo promedio por día</strong
       >
-      <div style="color:#b2becd;margin-top:8px;">
-        Web desarrollada con Astro, React y CSS moderno. Optimizada para SEO y
-        accesibilidad.
-      </div>
-    </div>
-    <div
-      class="project-card card"
-      data-modal="dashboard"
-    >
-      <strong style="color:#e94560;font-size:1.2rem;"
-        >Dashboard de Analítica</strong
+      <div
+        style="color:#b2becd;margin-top:8px;display:flex;flex-direction:column;gap:8px;"
       >
-      <div style="color:#b2becd;margin-top:8px;">
-        Aplicación interactiva para visualización de datos en tiempo real,
-        usando Node.js y Chart.js.
+        Es una aplicacion que permite hacer calculos de tiempo promedio en
+        resolver en la resolucion de tickets de soporte tecnico. durante el mes.
+
+        <article style="margin-top:12px;display:flex;gap:16px;">
+          <a
+            class="link"
+            href="https://github.com/superj4vi/calculadora-TiempoPromedio.git"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github />
+            Ver GitHub</a
+          >
+          <a
+            class="link"
+            href="https://tiempopromedio.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer">🚀 Ver Demo</a
+          >
+        </article>
       </div>
     </div>
   </div>
   <style>
-		.card{
-			flex:1;
-			min-width:220px;
-			background:#1a1a2e;
-			border-radius:12px;
-			box-shadow:0 2px 8px rgba(31,38,135,0.12);
-			padding:24px;cursor:pointer;
-			transition:transform 0.2s;"
-		}
-    .project-modal {
-      transition:
-        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 0;
-      pointer-events: none;
+    .card {
+      flex: 1;
+      min-width: 220px;
+      background: #1a1a2e;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(31, 38, 135, 0.12);
+      padding: 24px;
     }
-    .project-modal.active {
-      opacity: 1;
-      pointer-events: auto;
-      transform: scale(1);
-    }
-    .project-modal .modal-content {
-      animation: modalFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    @keyframes modalFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+    .link {
+      color: #e94560;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
   </style>
-  <div
-    id="modal-portfolio"
-    class="project-modal"
-    style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(34,40,49,0.85);z-index:1000;align-items:center;justify-content:center;"
-  >
-  </div>
-  <div
-    id="modal-dashboard"
-    class="project-modal"
-    style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(34,40,49,0.85);z-index:1000;align-items:center;justify-content:center;"
-  >
-  </div>
-  <script is:inline>
-    document.querySelectorAll(".project-card").forEach((card) => {
-      card.addEventListener("click", function () {
-        const modalId = this.getAttribute("data-modal");
-        const modalEl = document.getElementById("modal-" + modalId);
-        if (modalEl) {
-          modalEl.style.display = "flex";
-          setTimeout(() => modalEl.classList.add("active"), 10);
-        }
-      });
-    });
-    document.querySelectorAll(".project-modal").forEach((modal) => {
-      modal.addEventListener("click", function (e) {
-        if (e.target === this) {
-          this.classList.remove("active");
-          setTimeout(() => {
-            this.style.display = "none";
-          }, 400);
-        }
-      });
-    });
-    // Render contenido de los modales
-    const modalPortfolio = document.getElementById("modal-portfolio");
-    if (modalPortfolio) {
-      modalPortfolio.innerHTML = `
-        <div class='modal-content' style='background:#222831;padding:2em 1.5em;border-radius:18px;max-width:500px;width:90%;box-shadow:0 8px 32px 0 rgba(31,38,135,0.37);position:relative;display:flex;flex-direction:column;'>
-          <button aria-label='Cerrar' style='position:absolute;top:1em;right:1em;background:none;border:none;font-size:1.5em;color:#e94560;cursor:pointer;' onclick='this.parentElement.parentElement.classList.remove("active");setTimeout(()=>{this.parentElement.parentElement.style.display="none"},400)'>&times;</button>
-          <h2 style='color:#e94560;margin-top:0;'>Portafolio Personal</h2>
-          <p>Proyecto de portafolio personal desarrollado con Astro y React, enfocado en la presentación profesional y optimización SEO. Incluye animaciones, diseño responsivo y accesibilidad mejorada.</p>
-          <ul>
-            <li>Astro, React, CSS moderno</li>
-            <li>SEO y accesibilidad</li>
-            <li>Animaciones y diseño responsivo</li>
-          </ul>
-        </div>
-      `;
-    }
-    const modalDashboard = document.getElementById("modal-dashboard");
-    if (modalDashboard) {
-      modalDashboard.innerHTML = `
-        <div class='modal-content' style='background:#222831;padding:2em 1.5em;border-radius:18px;max-width:500px;width:90%;box-shadow:0 8px 32px 0 rgba(31,38,135,0.37);position:relative;display:flex;flex-direction:column;'>
-          <button aria-label='Cerrar' style='position:absolute;top:1em;right:1em;background:none;border:none;font-size:1.5em;color:#e94560;cursor:pointer;' onclick='this.parentElement.parentElement.classList.remove("active");setTimeout(()=>{this.parentElement.parentElement.style.display="none"},400)'>&times;</button>
-          <h2 style='color:#e94560;margin-top:0;'>Dashboard de Analítica</h2>
-          <p>Aplicación para visualizar datos en tiempo real, con gráficos interactivos y paneles personalizables. Backend en Node.js y frontend con Chart.js.</p>
-          <ul>
-            <li>Node.js, Chart.js</li>
-            <li>Visualización en tiempo real</li>
-            <li>Paneles personalizables</li>
-          </ul>
-        </div>
-      `;
-    }
-  </script>
 </section>

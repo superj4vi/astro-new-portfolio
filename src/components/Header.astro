@@ -2,23 +2,29 @@
 // Header principal con navegación
 ---
 
+<script src="/src/scripts/menu-hamburger"></script>
+
 <header
+  class="header"
   style="width:100%;background:#1a1a2e;padding:1em 0;box-shadow:0 2px 8px rgba(31,38,135,0.12);"
 >
   <nav
     style="max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1em;"
   >
-	<a href="/">
-		<img src="/assets/logo.jpeg" alt="Logo de Javier Aragon" srcset=""
-		style="width:70px;height:70px;border-radius:50%;border:3px solid #e94560;box-shadow:0 4px 16px rgba(233,69,96,0.2);margin-bottom:10px;"
-		>
-	</a>
-   <!--  <a
-      href="/"
-      style="color:#e94560;font-weight:800;font-size:1.5rem;text-decoration:none;"
-      >Javier Aragón</a
-    > -->
-    <ul style="list-style:none;display:flex;gap:1.3em;margin:0;padding:0;">
+    <a href="/">
+      <img
+        src="/assets/logo.jpeg"
+        alt="Logo de Javier Aragon"
+        srcset=""
+        style="width:70px;height:70px;border-radius:50%;border:3px solid #e94560;box-shadow:0 4px 16px rgba(233,69,96,0.2);margin-bottom:10px;"
+      />
+    </a>
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
       <li>
         <a class="nav--title" href="#experiencia">💼Experiencia</a>
       </li>
@@ -34,11 +40,74 @@
     </ul>
   </nav>
 </header>
+
 <style>
   .nav--title {
     color: #fff;
     text-decoration: none;
     font-weight: 800;
     font-size: 1.5rem;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.3em;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 1em;
+    z-index: 1001;
+  }
+  .hamburger span {
+    width: 100%;
+    height: 4px;
+    background: #fff;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #1a1a2e;
+      padding: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: -2px 0 8px rgba(31, 38, 135, 0.12);
+      z-index: 1000;
+    }
+    .nav-links.active {
+      transform: translateX(0);
+    }
+    .hamburger {
+      display: flex;
+    }
+    /* Animación hamburguesa a X */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
   }
 </style>
