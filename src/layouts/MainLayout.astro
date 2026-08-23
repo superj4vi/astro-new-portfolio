@@ -18,6 +18,7 @@ const { title = "Javier Aragón | Desarrollador Web" } = Astro.props;
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
+
     <!-- <link rel="stylesheet" href="../style/global.css" /> -->
     <style>
       body {
@@ -31,6 +32,18 @@ const { title = "Javier Aragón | Desarrollador Web" } = Astro.props;
         min-height: 80vh;
       }
     </style>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-SEJ3GNRKJQ"
+      is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-SEJ3GNRKJQ");
+    </script>
   </head>
   <body>
     <slot name="header" />
@@ -40,5 +53,8 @@ const { title = "Javier Aragón | Desarrollador Web" } = Astro.props;
     <slot name="footer" />
 
     <script defer src="/scripts/menu-hamburger.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEJ3GNRKJQ"
+    ></script>
   </body>
 </html>
