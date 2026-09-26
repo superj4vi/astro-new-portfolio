@@ -4,16 +4,12 @@
 		"contenido": [
 			"JavaScript",
 			"Python",
-			"Java",
 			"C#"
 		]
 	},
 	{
 		"titulo": "🎨 Frameworks y bibliotecas",
 		"contenido": [
-			"React",
-			"Node.js",
-			"Express",
 			"Astro",
 			"Vite",
 			"Bootstrap",
